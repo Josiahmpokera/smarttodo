@@ -1,0 +1,114 @@
+<div class="page-wrapper toggled">
+  <!-- sidebar-wrapper -->
+  <nav id="sidebar" class="sidebar-wrapper sidebar-dark">
+    <div class="sidebar-content" data-simplebar style="height: calc(100% - 60px);">
+      <div class="sidebar-brand">
+        <a href="#">
+          <img src="assets/img/favicon.svg" height="44" class="logo-light-mode" alt="">
+          <img src="assets/img/favicon.svg" height="44" class="logo-dark-mode" alt="">
+          <span class="sidebar-colored">
+                      <img src="assets/img/smart.png" height="44" alt="">
+                  </span>
+        </a>
+      </div>
+
+      <ul class="sidebar-menu">
+        <li class="">
+          <label for="" class="ms-4 py-2" style="color: #647385;  font-size: 13px">General</label>
+          <a  routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" routerLink="/focus" href="#"><i class="bi bi-house-fill icon-sm icons me-2"></i>Focus</a>
+        </li>
+
+        <li class="">
+          <a routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" routerLink="/insight" href="javascript:void(0)"><i class="bi bi-graph-up-arrow me-2"></i>Insight</a>
+        </li>
+
+        <li class="">
+          <a routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" routerLink="/completed" href="javascript:void(0)"><i class="bi bi-check-circle-fill me-2"></i>Completed</a>
+        </li>
+
+        <li class="">
+          <a routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" routerLink="/all"  href="javascript:void(0)"><i class="bi bi-infinity me-2"></i>All</a>
+        </li>
+
+
+
+
+      </ul>
+      <!-- sidebar-menu  -->
+    </div>
+    <!-- Sidebar Footer -->
+    <ul class="sidebar-footer list-unstyled mb-0">
+      <!--          <li class="list-inline-item mb-0">-->
+      <!--              <a href="https://1.envato.market/landrick" target="_blank" class="btn btn-icon btn-soft-light"><i class="ti ti-shopping-cart"></i></a> <small class="text-muted fw-medium ms-1">Buy Now</small>-->
+      <!--          </li>-->
+      <li class="sidebar-dropdown">
+        <a routerLink="/login" style="color: #ffffff" href="javascript:void(0)"><i class="uil uil-question-circle me-2"></i>Logout</a>
+      </li>
+    </ul>
+    <!-- Sidebar Footer -->
+  </nav>
+  <!-- sidebar-wrapper  -->
+
+  <!-- Start Page Content -->
+  <main class="page-content bg-light">
+    <!-- Top Header -->
+    <div class="top-header">
+      <div class="header-bar d-flex justify-content-between">
+        <div class="d-flex align-items-center">
+          <a href="#" class="logo-icon me-3">
+            <img src="../assets/images/logo-icon.png" height="30" class="small" alt="">
+            <span class="big">
+                          <img src="../assets/images/logo-dark.png" height="24" class="logo-light-mode" alt="">
+                          <img src="../assets/images/logo-light.png" height="24" class="logo-dark-mode" alt="">
+                      </span>
+          </a>
+
+
+          <div class="icon-button btn btn-icon text-white ms-3" data-bs-toggle="tooltip" data-bs-placement="bottom" title="View all Daily, Weekly and Monthly report of your Shop" routerLink="/" style="background-color: rgb(5,5,22)">
+            <i class="bi bi-house text-white"></i>
+          </div>
+
+          <div  class="icon-button btn btn-icon text-black ms-3" routerLink="/main" style="background-color: #FFCB29">
+            <i class="bi bi-tags-fill text-black"></i> New Task
+          </div>
+
+        </div>
+
+        <ul class="list-unstyled mb-0">
+
+          <li class="list-inline-item mb-0 ms-2">
+            <div class="dropdown dropdown-primary">
+              <button routerLink="/settings" type="button" class="btn btn-soft-light p-0" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="bi bi-gear-fill text-black fs-4"></i>
+              </button>
+            </div>
+          </li>
+
+
+        </ul>
+      </div>
+    </div>
+    <!-- Top Header -->
+
+    <div class="container-fluid">
+      <div class="layout-specing">
+        <router-outlet></router-outlet>
+      </div>
+    </div><!--end container-->
+
+    <!-- Footer Start -->
+    <footer class="shadow py-3">
+      <div class="container-fluid">
+        <div class="row align-items-center">
+          <div class="col">
+            <div class="text-sm-start text-center mx-md-2">
+              <p class="mb-0 text-muted"><i class="mdi mdi-heart text-danger"></i> ©Smart Todo </p>
+            </div>
+          </div><!--end col-->
+        </div><!--end row-->
+      </div><!--end container-->
+    </footer><!--end footer-->
+    <!-- End -->
+  </main>
+  <!--End page-content" -->
+</div>

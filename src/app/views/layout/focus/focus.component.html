@@ -1,0 +1,152 @@
+<div class="mmain p-3">
+
+
+  <div class="d-flex align-items-center justify-content-between">
+    <div>
+      <h2 class="fw-bold">My Day</h2>
+      <label for="">Monday, March 25</label>
+    </div>
+
+    <div class="mb-0 position-relative d-flex">
+
+      <div class="icon-button btn btn-icon text-white ms-3" data-bs-toggle="tooltip" data-bs-placement="bottom" title="View all Daily, Weekly and Monthly report of your Shop" routerLink="/" style="background-color: rgb(5,5,22)">
+        <i class="bi bi-filter text-white"></i>
+      </div>
+
+      <select class="form-select form-control" id="dailychart">
+        <option selected="">Today</option>
+        <option value="aug">This Week</option>
+        <option value="jul">This Month</option>
+      </select>
+    </div>
+  </div>
+
+  <hr>
+
+<!--  Form here-->
+
+  <!--  Todo Form here-->
+  <div class="card p-2 mt-2">
+    <form [formGroup]="todoForm" action="">
+
+      <div class="row">
+        <div class="col-md-7">
+          <div class="form-icon position-relative mt-2">
+            <i  class="bi bi-infinity icon-sm icons" style="margin-top: -5px"></i>
+            <input #todo (input)="onTyping()" (beforeinput)="notTyping()" formControlName="title" name="location" id="location" type="text" class="form-control form-control-sm ps-5" placeholder="Try typing To-Do name">
+          </div>
+        </div>
+
+        <div class="col-md-2">
+          <div class="form-icon position-relative mt-2">
+            <select formControlName="priorityType" class="form-select form-control" id="dailychart">
+              <option selected="">High Priority</option>
+              <option value="aug">Low Priority</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="col-md-2">
+          <input formControlName="date" type="date" name="" class="form-control form-control-sm mt-2" id="">
+        </div>
+<!--        Submit Button-->
+        <div class="col-md-1">
+          <button (click)="saveData()" [disabled]="buttonDisabled" class="me-2 btn btn-sm fw-bold mt-2 form-control text-center" style="background-color: #FFCB29; color: black">Add</button>
+        </div>
+      </div>
+    </form>
+  </div>
+  <!--  Todo Form end  here-->
+
+
+  <!--List of Todo-->
+
+      <ol>
+        <li *ngFor="let data of todos | async;">
+          <div class="card p-2 mt-2">
+            <div class="caa-l d-flex align-items-start">
+              <div class="first ms-2">
+                <input style="transform: scale(1.5)" type="checkbox" name="" class="form-check" id="">
+              </div>
+              <div class="second ms-3">
+                <h6 > {{ data.title }}<label for="" class="ms-3" style="font-size: 12px; margin-top:  -20px">
+                  <i class="bi bi-tags-fill text-black"></i> New Task
+                </label> </h6>
+
+              </div>
+
+              <div class="third justify-content-end">
+                <a href="" class="ms-3" style="font-size: 12px; color: red">
+                  <i class="bi bi-clipboard-heart text-danger"></i> Remove
+                </a>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ol>
+
+<!--  Todo Form end  here-->
+
+
+
+<!--  Completed Badge-->
+  <label class="mt-3" for="">Completed</label>
+  <hr>
+
+  <ol>
+    <li >
+      <div class="card p-2 mt-2">
+        <div class="caa-l d-flex align-items-start">
+          <div class="first ms-2">
+            <input style="transform: scale(1.5)" type="checkbox" name="" class="form-check" id="">
+          </div>
+          <div class="second ms-3">
+            <h6 style="text-decoration: line-through"> Working on Todo App<label for="" class="ms-3" style="font-size: 12px; margin-top:  -20px">
+              <i class="bi bi-tags-fill text-black"></i> New Task
+            </label> </h6>
+
+          </div>
+
+          <div class="third justify-content-end">
+            <a href="" class="ms-3" style="font-size: 12px; color: red">
+              <i class="bi bi-clipboard-heart text-danger"></i> Remove
+            </a>
+          </div>
+        </div>
+      </div>
+    </li>
+  </ol>
+
+
+  <!--Add Modal here-->
+
+  <!--Modal here-->
+  <ng-template #content let-c="close" let-d="dismiss">
+    <form action="">
+      <p class="text-center pt-4">
+        <i class="bi bi-shield-lock fs-1"></i>
+      </p>
+      <h5 class="text-center">Enter Security Code</h5>
+      <div class="modal-body">
+        <div class="digitt text-center">
+          <input  #digit1 type="text" id="digit1" class="digit-input" maxlength="1" pattern="\d"  required>
+          <input  #digit2 type="text" id="digit2" class="digit-input" maxlength="1" pattern="\d"   required>
+          <input  #digit3 type="text" id="digit3" class="digit-input" maxlength="1" pattern="\d"  required>
+          <input  #digit4 type="text" id="digit4" class="digit-input" maxlength="1" pattern="\d"  required>
+        </div>
+      </div>
+      <p class="text-center text-danger py-1">Error here</p>
+      <div class="py-3  border-top ">
+        <div class="row mx-3">
+          <div class="col-md-6">
+            <button type="button" style="background-color: #0FAB5D; color: white; width: 100%" class="btn text-center " >Unlock Stock</button>
+          </div>
+          <div class="col-md-6">
+            <button type="button" style="background-color: rgba(48,77,96,0.16)" class="btn form-control text-center text-white" >Return</button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </ng-template>
+
+</div>

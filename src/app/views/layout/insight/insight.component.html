@@ -1,0 +1,135 @@
+<div class="mmain p-3">
+
+  <div>
+    <h2 class="fw-bold">Insight</h2>
+    <label for="">Monday, March 25</label>
+  </div>
+
+  <div class="row row-cols-xl-4 row-cols-md-2 row-cols-1">
+    <div class="col mt-2">
+      <a href="#!" style="border: 1px solid #dfe5ec" class="features feature-primary d-flex justify-content-between align-items-center rounded shadow-sm p-3">
+        <div class="d-flex align-items-center">
+          <div class="iconn  text-center rounded-1">
+            <i style="color: #FFCB29;" class="bi bi-bag-check-fill fs-1 mb-0"></i>
+          </div>
+          <div class="flex-1 ms-3">
+            <h6 class="mb-0 text-muted">TO-DO Tasks<i class="bi bi-arrow-up-right ms-3" style="color: #0FAB5D; font-size: 13px"></i>    </h6>
+            <h4 class="fs-5 text-dark mb-0"><span style="font-weight: bold" class="counter-value" data-target="4589">23</span></h4>
+          </div>
+        </div>
+      </a>
+    </div><!--end col-->
+
+    <div class="col mt-2">
+      <a href="#!" style=" border: 1px solid #dfe5ec" class="features  feature-primary d-flex justify-content-between align-items-center rounded shadow-sm p-3">
+        <div class="d-flex align-items-center">
+          <div class="iconn text-center rounded-1">
+            <i style="color: #0FAB5D;" class="bi bi-cart-check-fill fs-1 mb-0"></i>
+          </div>
+          <div class="flex-1 ms-3">
+            <h6 class="mb-0 text-muted">Solid Products <i class="bi bi-arrow-down-right ms-3" style="color: #0FAB5D; font-size: 13px"></i> </h6>
+            <h4 class="fs-5 text-dark mb-0"><span style="font-weight: bold" class="counter-value" data-target="4589">0</span></h4>
+
+          </div>
+        </div>
+      </a>
+    </div><!--end col-->
+
+    <div class="col mt-2">
+      <a href="#!" style=" border: 1px solid #dfe5ec" class="features feature-primary d-flex justify-content-between align-items-center rounded shadow-sm p-3">
+        <div class="d-flex align-items-center">
+          <div class="iconn text-center rounded-1">
+            <i style="color: #94adb0;" class="bi bi-bar-chart-steps fs-1 mb-0"></i>
+          </div>
+          <div class="flex-1 ms-3">
+            <h6 class="mb-0 text-muted">Stock Items</h6>
+            <p class="fs-5 text-dark fw-bold mb-0"><span class="counter-value" data-target="4800">34,002</span></p>
+          </div>
+        </div>
+      </a>
+    </div><!--end col-->
+
+    <div class="col mt-2">
+      <a href="#!" style="border: 1px solid #dfe5ec" class="features feature-primary d-flex justify-content-between align-items-center rounded shadow-sm p-3">
+        <div class="d-flex align-items-center">
+          <div class="iconn text-center rounded-1">
+            <i style="color: #ffffff;" class="uil uil-store fs-4 mb-0"></i>
+          </div>
+          <div class="flex-1 ms-3">
+            <h6 class="mb-0 text-muted">Items</h6>
+            <p class="fs-5 text-dark fw-bold mb-0"><span class="counter-value" data-target="145">23</span></p>
+          </div>
+        </div>
+      </a>
+    </div><!--end col-->
+  </div><!--end row-->
+
+  <label class="mt-4 fs-5 fw-bold" for="">Productivity Score</label>
+  <hr>
+
+
+  <div class="card p-3">
+    <div class="row">
+      <div class="col-md-3">
+        <div class="d-flex align-items-center">
+          <div class="flex-1 ms-3">
+            <h2 class="fs-2 text-dark mb-0"><span style="font-weight: bold; color: #05ccf8" class="counter-value" data-target="4589">85%</span></h2>
+            <label for="">Your overall score</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="d-flex align-items-center">
+          <div class="flex-1 ms-3">
+            <h2 class="fs-2 text-dark mb-0"><span style="font-weight: bold; color: #07e012" class="counter-value" data-target="4589">63%</span></h2>
+            <label for="">Your weekly score</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="d-flex align-items-center">
+          <div class="flex-1 ms-3">
+            <h2 class="fs-2 text-dark mb-0"><span style="font-weight: bold; color: rgba(56,77,94,0.99)" class="counter-value" data-target="4589">80/100%</span></h2>
+            <label for="">Average task completed</label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <label class="mt-4 fs-5 fw-bold" for="">Your Nearest To-Do</label>
+  <hr>
+
+  <!--List of Todo-->
+
+  <ol>
+    <li *ngFor="let data of todos | async;">
+      <div class="card p-2 mt-2">
+        <div class="caa-l d-flex align-items-start">
+          <div class="first ms-2">
+            <input style="transform: scale(1.5)" type="checkbox" name="" class="form-check" id="">
+          </div>
+          <div class="second ms-3">
+            <h6 > {{ data.title }}<label for="" class="ms-3" style="font-size: 12px; margin-top:  -20px">
+              <i class="bi bi-tags-fill text-black"></i> New Task
+            </label> </h6>
+
+          </div>
+
+          <div class="third justify-content-end">
+            <a href="" class="ms-3" style="font-size: 12px; color: red">
+              <i class="bi bi-clipboard-heart text-danger"></i> Remove
+            </a>
+          </div>
+        </div>
+      </div>
+    </li>
+  </ol>
+
+  <!--  Todo Form end  here-->
+
+
+
+</div>
